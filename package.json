@@ -1,0 +1,44 @@
+{
+  "name": "gzixnine",
+  "version": "1.0.0",
+  "description": "My GulpJs Project",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GziXnine/Layout.git"
+  },
+  "author": "Ahmed Allam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GziXnine/Layout/issues"
+  },
+  "homepage": "https://github.com/GziXnine/Layout#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "del": "^7.1.0",
+    "gulp": "^5.0.0",
+    "gulp-autoprefixer": "^9.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect": "^5.7.0",
+    "gulp-imagemin": "^9.1.0",
+    "gulp-livereload": "^4.0.2",
+    "gulp-notify": "^5.0.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^10.0.0",
+    "gulp-pug": "^5.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-typescript": "^6.0.0-alpha.1",
+    "gulp-uglify": "^3.0.2",
+    "gulp-zip": "^6.0.0",
+    "sass": "^1.79.4"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  }
+}

@@ -1,0 +1,14 @@
+// !Components File
+@use "components/global-rules";
+
+// !Layouts File
+@use "layouts/header";
+@use "layouts/landing";
+@use "layouts/footer";
+
+// !Utilities File
+@use "utilities/colors" as *;
+@use "utilities/times" as *;
+@use "utilities/animations";
+@use "utilities/functions";
+@use "utilities/mixins";
