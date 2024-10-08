@@ -1,1 +1,17 @@
 extends ../layouts/layout
+
+block main
+  main
+    .landing.flex-center
+      img(src="assets/images/hero/hero-bg.svg" class="background")
+      .container
+        .row
+          section.data.col-lg-6.col-md-12
+            h1.p-0 Launch Your SaaS Website in Minutes!
+            p.py-10.pb-25 Everything you need to create a stunning website that attracts and retains customers with ease. From customizable templates to seamless integrations.
+            button(href="#").p-20 Get Started
+          section.dashboard.col-lg-6.col-md-12
+            img(src="assets/images/hero/hero-img.png", alt="").m-20
+      button(class="down")
+        a(href="#features")
+          i(class="fa-solid fa-arrow-down-long")

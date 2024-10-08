@@ -1,2 +1,175 @@
+/** @format */
+
 @use "../utilities/colors" as *;
 @use "../utilities/times" as *;
+@use "../utilities/mixins" as *;
+
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 3;
+
+  &.scroll {
+    background-color: $header-color;
+    backdrop-filter: blur(5px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  }
+
+  nav {
+    transition: $transition6;
+    &.scroll {
+      padding: 15px !important;
+    }
+
+    .container {
+      .logo {
+        transition: $transition3;
+        a {
+          color: $link-hover !important;
+        }
+        &:hover {
+          transform: scale(1.01) translateY(-3px);
+        }
+      }
+
+      .navbar-toggler {
+        padding: 0.25rem 0.75rem;
+        font-size: 1.25rem;
+        line-height: 1;
+        background-color: transparent;
+        border: 1px solid transparent;
+        border-radius: 0.25rem;
+        position: relative;
+
+        .toggler-icon {
+          width: 30px;
+          height: 2px;
+          background-color: #fff;
+          display: block;
+          margin: 5px 0;
+          position: relative;
+          -webkit-transition: all 0.3s ease-out 0s;
+          transition: all 0.3s ease-out 0s;
+        }
+
+        &:not(.collapsed) {
+          &::before {
+            @include shape("arrow", "top", white, 50%, 12px);
+            top: 29px;
+          }
+        }
+
+        &:focus {
+          outline: none;
+          -webkit-box-shadow: none;
+          box-shadow: none;
+        }
+
+        &.active {
+          .toggler-icon:nth-of-type(1) {
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+            top: 7px;
+          }
+          .toggler-icon:nth-of-type(2) {
+            opacity: 0;
+          }
+
+          .toggler-icon:nth-of-type(3) {
+            -webkit-transform: rotate(135deg);
+            transform: rotate(135deg);
+            top: -7px;
+          }
+        }
+
+        @media only screen and (min-width: 768px) and (max-width: 991px),
+          (max-width: 767px) {
+          .navbar-collapse {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: #fff;
+            z-index: 9;
+            -webkit-box-shadow: 0px 15px 20px 0px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 15px 20px 0px rgba(0, 0, 0, 0.1);
+          }
+        }
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+
+      .navbar-nav {
+        @media only screen and (min-width: 768px) and (max-width: 991px),
+          (max-width: 767px) {
+          width: 100%;
+          padding: 20px 0px;
+          background-color: white;
+          margin-top: 15px;
+        }
+
+        li {
+          display: inline-block;
+
+          a {
+            color: white;
+            font-weight: 500;
+            position: relative;
+
+            &.scroll {
+              color: black;
+            }
+
+            &::before,
+            &::after {
+              content: "";
+              position: absolute;
+              left: 0;
+              background-color: $header-active;
+              width: 0;
+            }
+            &::before {
+              height: 4px;
+              bottom: 3px;
+              border-radius: 6px;
+              transition: $transition3;
+            }
+            &::after {
+              border-radius: 50%;
+              bottom: 1px;
+              transition: 0s $transition3;
+            }
+
+            &:hover,
+            &.active {
+              color: $header-active;
+
+              &::before {
+                width: 100%;
+              }
+              &::after {
+                width: 8px;
+                height: 8px;
+              }
+            }
+
+            @media only screen and (min-width: 768px) and (max-width: 991px),
+              (max-width: 767px) {
+              color: black !important;
+              font-size: 17px;
+
+              &:hover,
+              &.active {
+                &::before {
+                  width: 25%;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

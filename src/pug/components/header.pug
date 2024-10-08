@@ -1,2 +1,23 @@
-header 
-  navbar
+header
+  nav.navbar.navbar-expand-lg.p-30
+    .container
+      a.navbar-brand(href="index.html").logo
+        img#logo(src="/assets/images/logo/logo.svg" alt="logo")
+      button.navbar-toggler.collapsed(type="button", data-bs-toggle="collapse", data-bs-target="#navbarSupportedContent", aria-controls="navbarSupportedContent", aria-expanded="false", aria-label="Toggle navigation")
+        span.toggler-icon
+        span.toggler-icon
+        span.toggler-icon
+      .collapse.navbar-collapse#navbarSupportedContent
+        ul.navbar-nav.ms-auto
+          li.nav-item.px-15
+            a.nav-link(aria-current="page", href="index.html", data-attr="#home" class= currentUrl === '/index.html' ? 'active' : '') Home
+          li.nav-item.px-15
+            a.nav-link(href="features.html", data-attr="#features" class= currentUrl === '/features.html' ? 'active' : '') Features
+          li.nav-item.px-15
+            a.nav-link(href="about-us.html", data-attr="#about-us" class= currentUrl === '/about-us.html' ? 'active' : '') About
+          li.nav-item.px-15
+            a.nav-link(href="why.html", data-attr="#why" class= currentUrl === '/why.html' ? 'active' : '') Why
+          li.nav-item.px-15
+            a.nav-link(href="pricing.html", data-attr="#pricing" class= currentUrl === '/pricing.html' ? 'active' : '') Pricing
+          li.nav-item.px-15
+            a.nav-link(href="clients.html", data-attr="#clients" class= currentUrl === '/clients.html' ? 'active' : '') Clients

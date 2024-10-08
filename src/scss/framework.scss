@@ -1,2 +1,46 @@
+/** @format */
+
 // !Utilities File
 @use "utilities/colors" as *;
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@for $i from 1 through 6 {
+  $j: $i * 5;
+  .m-#{$j} {
+    margin: #{$j}px;
+  }
+  .p-#{$j} {
+    padding: #{$j}px;
+  }
+  .mx-#{$j} {
+    margin-left: #{$j}px;
+    margin-right: #{$j}px;
+  }
+  .px-#{$j} {
+    padding-left: #{$j}px;
+    padding-right: #{$j}px;
+  }
+  .my-#{$j} {
+    margin-top: #{$j}px;
+    margin-bottom: #{$j}px;
+  }
+  .py-#{$j} {
+    padding-top: #{$j}px;
+    padding-bottom: #{$j}px;
+  }
+}
+
+.br-6 {
+  border-radius: 6px;
+}
