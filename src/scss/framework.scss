@@ -27,18 +27,46 @@
     margin-left: #{$j}px;
     margin-right: #{$j}px;
   }
+  .mr-#{$j} {
+    margin-right: #{$j}px;
+  }
+  .ml-#{$j} {
+    margin-left: #{$j}px;
+  }
   .px-#{$j} {
     padding-left: #{$j}px;
     padding-right: #{$j}px;
   }
+  .pr-#{$j} {
+    padding-right: #{$j}px;
+  }
+  .pl-#{$j} {
+    padding-left: #{$j}px;
+  }
   .my-#{$j} {
     margin-top: #{$j}px;
+    margin-bottom: #{$j}px;
+  }
+  .mt-#{$j} {
+    margin-top: #{$j}px;
+  }
+  .mb-#{$j} {
     margin-bottom: #{$j}px;
   }
   .py-#{$j} {
     padding-top: #{$j}px;
     padding-bottom: #{$j}px;
   }
+  .pt-#{$j} {
+    padding-top: #{$j}px;
+  }
+  .pb-#{$j} {
+    padding-bottom: #{$j}px;
+  }
+}
+
+.w-100 {
+  width: 100%;
 }
 
 .br-6 {

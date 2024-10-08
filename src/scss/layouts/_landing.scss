@@ -5,18 +5,18 @@
 
 @use "../utilities/animations";
 
+// ! Start Landing Section
 .landing {
   position: relative;
   width: 100%;
   min-height: 100vh;
-  padding-left: 50px;
-  padding-right: 50px;
+  padding: {
+    top: 0;
+    left: 50px;
+    bottom: 50px;
+    right: 50px;
+  }
   overflow-x: hidden;
-
-  // @media only screen and (min-width: 768px) and (max-width: 991px),
-  //   (max-width: 767px) {
-  //   flex-direction: column;
-  // }
 
   .background {
     position: absolute;
@@ -25,6 +25,15 @@
     left: 50%;
     transform: translateX(-50%);
     z-index: -9999;
+  }
+
+  section {
+    @media (max-width: 1400px) {
+      padding-top: 100px;
+    }
+    @media (max-width: 767px) {
+      padding-top: 0;
+    }
   }
 
   .data {
@@ -141,7 +150,7 @@
     color: #5864ff;
     left: 280px;
     bottom: 180px;
-    z-index: 9;
+    z-index: 2;
 
     @media (max-width: 520px) {
       display: none;
@@ -150,6 +159,11 @@
     @media (max-width: 991px) {
       bottom: 10px;
       left: 130px;
+    }
+
+    @media (max-width: 1400px) {
+      bottom: 210px;
+      left: 430px;
     }
 
     a {
@@ -169,3 +183,236 @@
     }
   }
 }
+// ! End Landing Section
+
+// ! Start Features Section
+.features {
+  section {
+    text-align: center;
+    padding-left: 35px;
+    padding-right: 35px;
+    margin-bottom: 40px;
+
+    .icon {
+      svg {
+        color: $color2;
+        font-size: 120px;
+        padding: 30px;
+        border-radius: 50%;
+        background-color: $features-color;
+      }
+    }
+
+    h3 {
+      font: {
+        size: 28px;
+        weight: 600;
+      }
+    }
+
+    p {
+      line-height: 1.6;
+      color: $link;
+    }
+  }
+}
+// ! End Features Section
+// ! Start About Section
+.about-section {
+  position: relative;
+  z-index: 1;
+  padding: 100px 0;
+
+  &.pt-150 {
+    @media (max-width: 767px) {
+      padding: {
+        top: 0;
+        bottom: 50px;
+      }
+    }
+  }
+
+  .about-img {
+    position: relative;
+    z-index: 1;
+    padding: 75px 0;
+
+    @media only screen and (min-width: 768px) and (max-width: 991px),
+      (max-width: 767px) {
+      margin-bottom: 70px;
+    }
+
+    .shape {
+      position: absolute;
+      z-index: -1;
+
+      &.shape-1 {
+        top: 50%;
+        transform: translateY(-50%);
+        left: -70px;
+
+        @media only screen and (min-width: 992px) and (max-width: 1199px) {
+          width: 80%;
+        }
+
+        @media (max-width: 767px) {
+          width: 65%;
+          left: 0px;
+          top: 220px;
+        }
+      }
+
+      &.shape-2 {
+        bottom: 0;
+        right: 50px;
+
+        @media only screen and (min-width: 992px) and (max-width: 1199px) {
+          width: 75%;
+        }
+
+        @media only screen and (min-width: 768px) and (max-width: 991px) {
+          right: 120px;
+        }
+
+        @media (max-width: 767px) {
+          bottom: 35px;
+          width: 60%;
+          left: 110px;
+        }
+      }
+    }
+  }
+
+  .about-img-2 {
+    position: relative;
+    z-index: 1;
+    padding: 75px 0;
+
+    @media only screen and (min-width: 768px) and (max-width: 991px),
+      (max-width: 767px) {
+      margin-bottom: 70px;
+    }
+
+    .shape {
+      position: absolute;
+      z-index: -1;
+
+      &.shape-1 {
+        top: 50%;
+        transform: translateY(-50%);
+        right: -70px;
+
+        @media only screen and (min-width: 992px) and (max-width: 1199px) {
+          width: 80%;
+        }
+
+        @media (max-width: 767px) {
+          width: 65%;
+          top: 225px;
+          left: 135px;
+        }
+      }
+
+      &.shape-2 {
+        bottom: 0;
+        left: 50px;
+
+        @media only screen and (min-width: 992px) and (max-width: 1199px) {
+          width: 75%;
+        }
+
+        @media only screen and (min-width: 768px) and (max-width: 991px) {
+          left: 120px;
+        }
+
+        @media (max-width: 767px) {
+          bottom: 35px;
+          width: 60%;
+          left: 30px;
+        }
+      }
+    }
+  }
+
+  .about-content {
+    h2 {
+      color: $font-color;
+      margin-bottom: 25px;
+      font: {
+        size: 29px;
+        weight: 700;
+      }
+    }
+
+    p {
+      line-height: 1.6;
+      color: $link;
+
+      font: {
+        size: 18px;
+      }
+    }
+
+    ul {
+      li {
+        padding-left: 40px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #162447;
+        margin-bottom: 25px;
+        position: relative;
+
+        &::before {
+          content: "";
+          width: 18px;
+          height: 18px;
+          border-radius: 50%;
+          background: #5864ff;
+          position: absolute;
+          left: 0;
+          top: 6.5px;
+          box-shadow: 2px 4px 15px 0px #5864ff8a;
+        }
+      }
+    }
+
+    button {
+      position: relative;
+      border: 2px solid $link-hover;
+      outline: none;
+      background-color: transparent;
+      color: $link-hover;
+      font: {
+        weight: bold;
+        size: 18px;
+      }
+      border-radius: 50px;
+      width: 175px;
+      overflow: hidden;
+
+      &::before {
+        transition: $transition4;
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: $button-hover;
+        z-index: 10;
+        border-radius: 50%;
+      }
+
+      &:hover {
+        &::before {
+          width: 200px;
+          height: 200px;
+          border-radius: 200px;
+        }
+      }
+    }
+  }
+}
+
+// ! End About Section

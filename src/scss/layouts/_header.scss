@@ -50,6 +50,10 @@ header {
           position: relative;
           -webkit-transition: all 0.3s ease-out 0s;
           transition: all 0.3s ease-out 0s;
+
+          @media (max-width: 992px) {
+            background-color: black;
+          }
         }
 
         &:not(.collapsed) {
