@@ -28,3 +28,27 @@ html {
     }
   }
 }
+
+.head {
+  text-align: center;
+  h3 {
+    color: $font-color;
+    margin-bottom: 25px;
+    font: {
+      size: 29px;
+      weight: 700;
+    }
+  }
+
+  p {
+    max-width: 500px;
+    margin: auto;
+    line-height: 1.6;
+    color: $link;
+    padding-bottom: 20px;
+
+    font: {
+      size: 17px;
+    }
+  }
+}

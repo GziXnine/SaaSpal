@@ -43,3 +43,25 @@ navbarToggler?.addEventListener("click", (event: MouseEvent) => {
   const target = event.currentTarget as HTMLElement;
   target.classList.toggle("active");
 });
+
+// !Pricing Section Select
+const btns = document.querySelectorAll(
+  ".pricing button"
+) as NodeListOf<HTMLButtonElement>;
+const conatiners = document.querySelectorAll(
+  ".pricing .container"
+) as NodeListOf<HTMLButtonElement>;
+
+btns.forEach((btn, index) => {
+  btn.addEventListener("click", () => {
+    btns.forEach((btn) => {
+      btn.classList.remove("active");
+    });
+    btn.classList.add("active");
+
+    conatiners.forEach((container) => {
+      container.classList.remove("active");
+    });
+    conatiners[index].classList.add("active");
+  });
+});

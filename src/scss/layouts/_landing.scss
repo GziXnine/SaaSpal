@@ -414,5 +414,184 @@
     }
   }
 }
-
 // ! End About Section
+// ! Start Why Section
+.why {
+  padding: 100px 0 50px;
+  background-color: $features-color;
+
+  section {
+    padding: 20px;
+
+    @media (max-width: 767px) {
+      text-align: center;
+    }
+
+    .icon {
+      svg {
+        color: $color2;
+        font-size: 60px;
+      }
+    }
+
+    h3 {
+      font: {
+        weight: 650;
+      }
+    }
+
+    p {
+      line-height: 1.6;
+      font: {
+        size: 17px;
+        weight: 400;
+      }
+    }
+  }
+}
+// ! End Why Section
+// ! Start Pricing Section
+.pricing {
+  padding: 100px 0 50px;
+  text-align: center;
+
+  button {
+    padding: 15px 25px;
+    border-radius: 50px;
+    transition: $transition4;
+    margin: 5px;
+
+    font: {
+      size: 18px;
+      weight: 650;
+    }
+
+    color: $link;
+    background-color: $features-color;
+    border: none;
+
+    &.active {
+      background-color: $color2;
+      color: white;
+      border: none;
+      outline: none;
+    }
+  }
+
+  .container {
+    &:not(.active) {
+      display: none;
+    }
+
+    .row {
+      padding-top: 40px;
+    }
+  }
+
+  section {
+    padding: 50px 30px 30px;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 0px 0px 59px rgba(191, 191, 191, 0.16);
+    margin: 20px;
+    width: calc(100% / 3 - 40px);
+
+    @media (max-width: 992px) {
+      width: calc(100% / 2 - 40px);
+      margin: 20px;
+    }
+
+    @media (max-width: 767px) {
+      width: calc(100% - 40px);
+      margin: 10px 20px;
+    }
+  }
+
+  .data {
+    h3 {
+      font: {
+        size: 45px;
+        weight: bold;
+      }
+      color: $color2;
+      padding: 0px 20px 20px;
+    }
+
+    p {
+      font: {
+        size: 22px;
+        weight: 700;
+      }
+      color: $font-color;
+      padding-bottom: 10px;
+    }
+
+    border-bottom: 1px solid #ddd;
+  }
+
+  .price {
+    padding-top: 20px;
+    ul {
+      text-align: left;
+      li {
+        padding: 10px;
+        padding-left: 30px;
+        color: $link;
+        font: {
+          size: 17px;
+          weight: 400;
+        }
+      }
+
+      svg {
+        padding-right: 15px;
+        font-size: 20px;
+
+        &.fa-check {
+          color: $color2;
+        }
+      }
+    }
+
+    button {
+      position: relative;
+      overflow: hidden;
+      font: {
+        size: 17px;
+        weight: 550;
+      }
+      background-color: white;
+      border: 2px solid $color2;
+      margin-top: 30px;
+      padding: 16px 40px;
+
+      &.middle {
+        background-color: $color2 !important;
+        color: white;
+      }
+
+      &::before {
+        transition: $transition4;
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: $button-hover;
+        z-index: 10;
+        border-radius: 50%;
+      }
+
+      &:hover {
+        &::before {
+          width: 200px;
+          height: 200px;
+          border-radius: 200px;
+        }
+      }
+    }
+  }
+}
+// ! End Pricing Section
