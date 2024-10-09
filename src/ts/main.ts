@@ -15,7 +15,7 @@ window.addEventListener("scroll", () => {
     lis.forEach((li) => {
       li.classList.add("scroll");
     });
-    img.src = "/assets/images/logo/logo-2.svg";
+    img.src = "assets/images/logo/logo-2.svg";
   } else {
     header.classList.remove("scroll");
     nav.classList.remove("scroll");
