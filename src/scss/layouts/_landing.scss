@@ -595,3 +595,149 @@
   }
 }
 // ! End Pricing Section
+// ! Start Subscribe Section
+.subscribe {
+  padding: 60px 0 80px;
+  margin: 10px;
+
+  .container {
+    background: url("../assets/images/subscribe/subscribe-bg.svg") no-repeat;
+    background-size: cover;
+    border-radius: 40px;
+    padding: 60px 40px;
+
+    .title {
+      h3 {
+        font: {
+          size: 29px;
+          weight: 650;
+        }
+        color: white;
+        margin-bottom: 25px;
+
+        @media (max-width: 767px) {
+          font: {
+            size: 21px;
+          }
+        }
+      }
+
+      p {
+        font: {
+          size: 18px;
+        }
+        color: white;
+        line-height: 1.6;
+
+        @media (max-width: 767px) {
+          font: {
+            size: 16px;
+          }
+        }
+      }
+    }
+
+    .form {
+      position: relative;
+
+      @media (max-width: 992px) {
+        min-height: 20vh;
+      }
+
+      input {
+        @media (max-width: 992px) {
+          min-height: 8vh;
+        }
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 95%;
+        padding: 25px 20px 25px 30px;
+        border: none;
+        border-radius: 15px;
+        color: $color2;
+
+        font: {
+          size: 16px;
+          weight: bold;
+        }
+
+        &::placeholder {
+          font: {
+            size: 16px;
+            weight: 400;
+          }
+
+          color: $link;
+          transition: $transition6;
+        }
+
+        &:focus {
+          outline: none;
+          box-shadow: 10px 10px 59px rgba(191, 191, 191, 0.226);
+
+          &::placeholder {
+            color: transparent;
+          }
+        }
+      }
+
+      button {
+        @media (max-width: 992px) {
+          min-height: 7vh;
+        }
+        position: absolute;
+        overflow: hidden;
+        padding: 22px 25px !important;
+        border-radius: 12px;
+        transition: $transition4;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 23px;
+
+        font: {
+          size: 18px;
+          weight: 650;
+        }
+
+        color: white;
+        background-color: $color2;
+        border: none;
+
+        @media (max-width: 767px) {
+          top: 160px;
+          transform: translateY(-50%);
+          left: 13px;
+          color: $color2;
+          background-color: white;
+          width: 160px;
+          border-radius: 20px;
+          font-weight: bold;
+        }
+
+        &::before {
+          transition: $transition4;
+          content: "";
+          position: absolute;
+          width: 0;
+          height: 0;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background-color: rgba(255, 255, 255, 0.1);
+          z-index: 10;
+          border-radius: 50%;
+        }
+
+        &:hover {
+          &::before {
+            width: 200px;
+            height: 200px;
+            border-radius: 200px;
+          }
+        }
+      }
+    }
+  }
+}
+// ! End Subscribe Section

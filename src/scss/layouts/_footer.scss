@@ -1,2 +1,98 @@
+/** @format */
+
 @use "../utilities/colors" as *;
 @use "../utilities/times" as *;
+
+// ! Start Footer Section
+footer {
+  position: relative;
+  width: 100%;
+  padding-top: 300px;
+  padding-bottom: 30px;
+  overflow-y: hidden;
+
+  & > img {
+    position: absolute;
+    width: 1900px;
+    right: 5px;
+    z-index: -1;
+    bottom: -80px;
+
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+
+  @media (max-width: 767px) {
+    background-color: $color2;
+  }
+
+  .container {
+    .footer-logo {
+      @media (max-width: 767px) {
+        margin-bottom: 40px;
+      }
+
+      p {
+        color: white;
+        width: 300px;
+      }
+
+      ul {
+        li {
+          display: inline-block;
+          margin-right: 20px;
+
+          a {
+            color: white;
+            border-radius: 50%;
+            font-size: 16px;
+            background-color: #ffffff21;
+            padding: 7px 14px;
+            transition: $transition4;
+
+            &:hover {
+              background-color: white;
+              color: $color2;
+            }
+          }
+        }
+      }
+    }
+
+    .footer-links {
+      @media (max-width: 767px) {
+        margin-bottom: 40px;
+      }
+
+      h3 {
+        color: white;
+        font: {
+          size: 26px;
+          weight: 600;
+        }
+      }
+
+      ul {
+        li {
+          padding: 5px {
+            left: 0;
+          }
+          transition: $transition3;
+
+          &:hover {
+            transform: translateX(10px);
+          }
+          a {
+            color: white;
+            font: {
+              size: 17px;
+              weight: 500;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// ! End Footer Section
