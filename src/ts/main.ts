@@ -22,7 +22,7 @@ window.addEventListener("scroll", () => {
     lis.forEach((li) => {
       li.classList.remove("scroll");
     });
-    img.src = "/assets/images/logo/logo.svg";
+    img.src = "assets/images/logo/logo.svg";
   }
 });
 
