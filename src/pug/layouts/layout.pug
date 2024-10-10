@@ -1,14 +1,15 @@
 include ../components/variable
 
 doctype html
-head 
-  include ../components/meta
-  title= pageTitle
-  include ../components/styles
-  include ../components/fonts
-body
-  include ../components/header
-  block main
-    main
-  include ../components/footer
-  include ../components/scripts
+html(lang="en")
+  head 
+    include ../components/meta
+    title= pageTitle
+    include ../components/styles
+    include ../components/fonts
+  body
+    include ../components/header
+    block main
+      main
+    include ../components/footer
+    include ../components/scripts

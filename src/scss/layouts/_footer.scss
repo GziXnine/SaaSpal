@@ -33,6 +33,10 @@ footer {
         margin-bottom: 40px;
       }
 
+      img {
+        padding-bottom: 15px;
+      }
+
       p {
         color: white;
         width: 300px;
@@ -68,9 +72,10 @@ footer {
       h3 {
         color: white;
         font: {
-          size: 26px;
+          size: 28px;
           weight: 600;
         }
+        padding-bottom: 15px;
       }
 
       ul {
@@ -83,6 +88,7 @@ footer {
           &:hover {
             transform: translateX(10px);
           }
+
           a {
             color: white;
             font: {

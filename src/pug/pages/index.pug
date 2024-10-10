@@ -247,6 +247,35 @@ block main
                   i.fa-solid.fa-check 
                   | Free Future Updates
               button(href="#").book Get Start
+.clients
+  .container
+    .row
+      figure.col-xl-6.col-lg-6.col-md-12.col-sm-12
+        img(src="assets/images/testimonial/testimonial-shape.svg", alt="").shape
+        img(src="assets/images/testimonial/testimonial-dots.svg", alt="").dots
+        .users
+          each user in [
+            { src: "assets/images/testimonial/testimonial-1.png", name: "Gray Simon", title: "UIX Designer and Developer" },
+            { src: "assets/images/testimonial/testimonial-2.png", name: "Jonathon Smith", title: "Developer and Youtuber" },
+            { src: "assets/images/testimonial/testimonial-3.png", name: "Michel Smith", title: "Traveler and Vlogger" }
+          ]
+            img(src=user.src, alt=`${user.name}`).data.data${loop.index + 1} if loop.index === 0 else `.data.data${loop.index + 1}`
+        .quote
+          i.fa-solid.fa-quote-right
+      section.datas.col-xl-6.col-lg-6.col-md-12.col-sm-12
+        h4 What our customers say
+        p.py-20 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed dinonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem.
+        each user in [
+          { name: "Gray Simon", title: "UIX Designer and Developer" },
+          { name: "Jonathon Smith", title: "Developer and Youtuber" },
+          { name: "Michel Smith", title: "Traveler and Vlogger" }
+        ]
+          .data.data${loop.index + 1}
+            h5= user.name
+            p= user.title
+        .buttons
+          i.fa-solid.fa-chevron-left
+          i.fa-solid.fa-chevron-right
     .subscribe
       .container
         .row

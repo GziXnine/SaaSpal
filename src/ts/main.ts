@@ -28,7 +28,6 @@ window.addEventListener("scroll", () => {
 
 // !Dynamically set the current URL
 var currentUrl: string = window.location.pathname; // *gets the current page's path
-console.log(currentUrl);
 // !You can update your logic to dynamically assign 'active' class based on the current page
 document.querySelectorAll<HTMLAnchorElement>(".nav-link").forEach((link) => {
   const href: string | null = link.getAttribute("href");
@@ -65,3 +64,29 @@ btns.forEach((btn, index) => {
     conatiners[index].classList.add("active");
   });
 });
+
+// !Testimonials Section
+const slides = document.querySelectorAll(
+  ".clients .users img"
+) as NodeListOf<HTMLImageElement>;
+const targets = document.querySelectorAll(
+  ".clients .buttons i"
+) as NodeListOf<SVGAElement>;
+let currIndex: number = 0;
+
+console.log(targets);
+let dynIndex: number = 0;
+currIndex = 0;
+
+targets.forEach((target, index) => {
+  target.addEventListener("click", () => {
+    dynIndex = index === 0 ? dynIndex - 1 : dynIndex + 1;
+    console.log(dynIndex);
+  });
+});
+
+slides[0].classList.remove("active");
+slides[1].classList.add("active");
+console.log(slides[0]);
+console.log(slides[1]);
+console.log(slides[2]);

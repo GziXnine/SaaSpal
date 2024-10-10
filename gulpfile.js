@@ -1,3 +1,5 @@
+/** @format */
+
 import gulp from "gulp";
 import concat from "gulp-concat";
 import postcss from "gulp-postcss";
@@ -87,7 +89,7 @@ gulp.task("clean", function () {
 gulp.task("pug", function () {
   return gulp
     .src(paths.html.src)
-    .pipe(pug({ pretty: true })) // *Compile Pug files to HTML
+    .pipe(pug({ pretty: false })) // *Compile Pug files to HTML
     .pipe(gulp.dest(paths.html.dest))
     .pipe(livereload());
 });
