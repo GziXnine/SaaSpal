@@ -31,7 +31,7 @@ dotenv.config();
 
 // !Utility function to get the target environment
 let getTargetEnvironment = () => {
-  const env = process.env.NODE_ENV || "development"; // *Default to development
+  const env = process.env.NODE_ENV || "production"; // *Default to development
   if (!["development", "production"].includes(env)) {
     console.warn(`Invalid environment: ${env}. Defaulting to "development".`);
     return "development";
@@ -199,7 +199,7 @@ gulp.task("images", () => {
         title: "Gulp Error",
         message: "Error: <%= error.message %>",
       })
-    ); // Global error handler
+    ); // TODO Global error handler
 });
 
 // !Task to copy videos
@@ -259,7 +259,7 @@ gulp.task(
       "pug",
       "styles",
       "scripts",
-      // "images",
+      "images",
       "videos",
       "webfonts",
       "css",
