@@ -1,0 +1,22 @@
+include ../components/variable
+block variables
+  - var fileName = "fileName";
+doctype html
+html(lang="en")
+  head 
+    include ../components/meta
+    title= pageTitle
+    include ../components/styles
+    include ../components/fonts
+  body
+    include ../components/header
+    .head-section
+      section.flex-center Welcome To SaaS Template
+    .path
+      .container
+        a(href="index.html") Home 
+        span / 
+        span= fileName
+    block section
+    include ../components/footer
+    include ../components/scripts

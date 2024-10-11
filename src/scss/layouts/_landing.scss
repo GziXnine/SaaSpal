@@ -187,6 +187,7 @@
 
 // ! Start Features Section
 .features {
+  padding: 100px 0;
   section {
     text-align: center;
     padding-left: 35px;
@@ -706,6 +707,13 @@
   }
 
   .datas {
+    .data {
+      p {
+        font : {
+          size: 16px;
+        }
+      }
+    }
     h4 {
       font: {
         size: 30px;
@@ -751,27 +759,33 @@
       justify-content: end;
       padding-right: 200px;
 
-      svg {
-        border: 2px solid #ccc;
-        color: #ccc;
-        padding: 10px;
-        size: 12px;
+      button {
         width: 48px;
         height: 48px;
         border-radius: 50%;
-        margin-left: 5px;
-        margin-right: 5px;
-        cursor: pointer;
-        transition: all $transition3 ease-out 0s;
+        border: none;
         margin: {
           left: 7px;
           right: 7px;
         }
+        background-color: white;
 
-        &:hover {
-          color: #5864ff;
-          border-color: #5864ff;
-          box-shadow: 0px 6px 16px rgba(88, 100, 255, 0.25);
+        svg {
+          border: 2px solid #ccc;
+          width: 48px;
+          height: 48px;
+          border-radius: 50%;
+          transition: all $transition3 ease-out 0s;
+          size: 12px;
+          cursor: pointer;
+          color: #ccc;
+          padding: 10px;
+
+          &:hover {
+            color: #5864ff;
+            border-color: #5864ff;
+            box-shadow: 0px 6px 16px rgba(88, 100, 255, 0.25);
+          }
         }
       }
 
@@ -835,9 +849,6 @@
       }
 
       input {
-        @media (max-width: 992px) {
-          min-height: 8vh;
-        }
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
@@ -870,12 +881,13 @@
             color: transparent;
           }
         }
+
+        @media (max-width: 992px) {
+          min-height: 8vh;
+        }
       }
 
       button {
-        @media (max-width: 992px) {
-          min-height: 7vh;
-        }
         position: absolute;
         overflow: hidden;
         padding: 22px 25px !important;
@@ -884,10 +896,6 @@
         top: 50%;
         transform: translateY(-50%);
         right: 23px;
-
-        @media (max-width: 1400px) {
-          right: 18px;
-        }
 
         font: {
           size: 18px;
@@ -929,6 +937,14 @@
             height: 200px;
             border-radius: 200px;
           }
+        }
+
+        @media (max-width: 1400px) {
+          right: 18px;
+        }
+
+        @media (max-width: 992px) {
+          min-height: 7vh;
         }
       }
     }

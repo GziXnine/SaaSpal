@@ -29,9 +29,22 @@ window.addEventListener("scroll", () => {
 // !Dynamically set the current URL
 var currentUrl: string = window.location.pathname; // *gets the current page's path
 // !You can update your logic to dynamically assign 'active' class based on the current page
+function isActiveLink(href: string | null): boolean {
+  if (!href) return false;
+
+  // *Handle the case for index.html or home page ('/')
+  if (href === "index.html" || href === "/") {
+    return currentUrl === "/" || currentUrl === "/index.html";
+  }
+
+  // *General case for other pages
+  return currentUrl.includes(href);
+}
+
+// *Add 'active' class based on current page
 document.querySelectorAll<HTMLAnchorElement>(".nav-link").forEach((link) => {
   const href: string | null = link.getAttribute("href");
-  if (href && currentUrl.includes(href)) {
+  if (isActiveLink(href)) {
     link.classList.add("active");
   }
 });
@@ -70,23 +83,36 @@ const slides = document.querySelectorAll(
   ".clients .users img"
 ) as NodeListOf<HTMLImageElement>;
 const targets = document.querySelectorAll(
-  ".clients .buttons i"
+  ".clients .buttons button"
 ) as NodeListOf<SVGAElement>;
-let currIndex: number = 0;
+const titles = document.querySelectorAll(
+  ".clients .datas .data"
+) as NodeListOf<HTMLDivElement>;
 
-console.log(targets);
-let dynIndex: number = 0;
-currIndex = 0;
+let currIndex: number = 0;
 
 targets.forEach((target, index) => {
   target.addEventListener("click", () => {
-    dynIndex = index === 0 ? dynIndex - 1 : dynIndex + 1;
-    console.log(dynIndex);
+    currIndex = index === 0 ? currIndex - 1 : currIndex + 1;
+
+    // Remove active class from all slides and titles
+    slides.forEach((slide) => {
+      slide.classList.remove("active");
+    });
+    titles.forEach((title) => {
+      title.classList.remove("active");
+    });
+
+    // Add active class to the current slide and title
+    titles[Math.abs(currIndex % slides.length)].classList.add("active");
+    slides[Math.abs(currIndex % slides.length)].classList.add("active");
   });
 });
 
-slides[0].classList.remove("active");
-slides[1].classList.add("active");
-console.log(slides[0]);
-console.log(slides[1]);
-console.log(slides[2]);
+// ! Making Scroll To Top Button Visible
+const toTop = document.getElementById("top") as HTMLSpanElement;
+window.addEventListener("scroll", () => {
+  window.scrollY >= 1000
+    ? (toTop.style.top = "93vh")
+    : (toTop.style.top = "-60px");
+});

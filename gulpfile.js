@@ -19,6 +19,9 @@ import imagemin from "gulp-imagemin";
 import { deleteAsync } from "del";
 import dotenv from "dotenv";
 import zip from "gulp-zip";
+import imageminMozjpeg from "imagemin-mozjpeg";
+import imageminPngquant from "imagemin-pngquant";
+import imageminSvgo from "imagemin-svgo";
 
 // !Initialize gulpSass with the Sass compiler
 const sassCompiler = gulpSass(sass);
@@ -124,6 +127,7 @@ gulp.task("styles", function () {
 gulp.task("css", function () {
   return gulp
     .src(paths.stylesCss.src)
+    .pipe(cleanCSS()) // *Minify CSS
     .pipe(gulp.dest(paths.stylesCss.dest))
     .pipe(livereload());
   // TODO .pipe(notify("CSS Files copied"));
@@ -133,6 +137,7 @@ gulp.task("css", function () {
 gulp.task("scripts", function () {
   return gulp
     .src(paths.scripts.src)
+    .pipe(uglify()) // *Minify JS
     .pipe(gulp.dest(paths.scripts.dest)) // *Output minified files to destination
     .pipe(livereload());
   // TODO .pipe(notify("Scripts task complete"));
@@ -158,47 +163,43 @@ gulp.task("typescript", function () {
 });
 
 // !Task to optimize images
-gulp.task("images", function () {
-  return gulp
-    .src(paths.images.src)
-    .pipe(
-      plumber({
-        errorHandler: notify.onError("Error: <%= error.message %>"),
-      })
-    )
-    .pipe(
-      imagemin(
-        {
-          interlaced: true,
-          progressive: true,
-          optimizationLevel: 5,
-          svgoPlugins: [
-            {
-              removeViewBox: true,
-            },
-          ],
-        },
-        {
-          verbose: true,
-        }
-      )
-    ) // *Use gulp-imagemin to optimize images
-    .pipe(gulp.dest(paths.images.dest))
-    .pipe(livereload());
-});
-
 gulp.task("images", () => {
   return gulp
     .src(paths.images.src)
     .pipe(
       plumber({
-        errorHandler: notify.onError("Error: <%= error.message %>"),
+        errorHandler: notify.onError({
+          title: "Image Optimization Error",
+          message: "Error: <%= error.message %>",
+        }),
       })
     )
-    .pipe(imagemin())
+    .pipe(
+      imagemin([
+        imageminMozjpeg({ quality: 75, progressive: true }),
+        imageminPngquant({
+          quality: [0.6, 0.8],
+          speed: 1,
+        }),
+        imageminSvgo({
+          plugins: [{ removeViewBox: true }, { cleanupIDs: false }],
+        }),
+      ])
+    )
     .pipe(gulp.dest(paths.images.dest))
-    .pipe(livereload());
-  // TODO .pipe(notify("Images task complete"));
+    .pipe(
+      notify({
+        message: "Images optimized successfully!",
+        onLast: true,
+      })
+    )
+    .on(
+      "error",
+      notify.onError({
+        title: "Gulp Error",
+        message: "Error: <%= error.message %>",
+      })
+    ); // Global error handler
 });
 
 // !Task to copy videos
@@ -253,7 +254,7 @@ gulp.task("watch", function () {
 gulp.task(
   "default",
   gulp.series(
-    // "clean",
+    "clean",
     gulp.parallel(
       "pug",
       "styles",

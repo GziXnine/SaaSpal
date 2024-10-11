@@ -1,0 +1,36 @@
+/** @format */
+
+.head-section {
+  width: 100%;
+  height: 280px;
+  background-color: #5864ff;
+  color: white;
+  font : {
+    size: 30px;
+    weight: 660;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 20px;
+  }
+
+  section {
+    height: 100%;
+  }
+}
+
+.path {
+  font-size: 17px;
+  background-color: #444cc5;
+  color: white;
+  padding: 20px;
+  cursor: pointer;
+  a {
+    color: white;
+    font-weight: 600;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
